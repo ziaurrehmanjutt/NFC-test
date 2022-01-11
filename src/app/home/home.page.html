@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Inbox
+      NFC Testing
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,15 +11,10 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">
-        Inbox
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <ion-button (click)="readTag()">Read Tags</ion-button>
+  <ion-button>Display Me</ion-button>
+  <ion-button>Write On Tag</ion-button>
   
-  <ion-list>
-    <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
-  </ion-list>
+
 </ion-content>
