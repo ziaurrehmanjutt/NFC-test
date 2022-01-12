@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>NFC Test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-button expand="block" size="large">
+      Read Tags
+    </ion-button>
+    <ion-badge slot="end" color="none"><small>It will read From tags</small></ion-badge>
+  </ion-item>
+
+  <ion-item>
+    <ion-button (click)="writeTags()" expand="block" size="large">
+      Write Tags
+    </ion-button>
+    <ion-badge slot="end" color="none"><small>It will Write On From tags</small></ion-badge>
+  </ion-item>
+
+  <ion-item>
+    <ion-button expand="block" size="large">
+      Share Me
+    </ion-button>
+    <ion-badge slot="end" color="none"><small>It Will Share Your Identity</small></ion-badge>
+  </ion-item>
+
+</ion-content>

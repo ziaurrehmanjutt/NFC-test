@@ -12,8 +12,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'nfc-test',
     pathMatch: 'full'
+  },
+  {
+    path: 'nfc-test',
+    loadChildren: () => import('./nfc-test/nfc-test.module').then( m => m.NfcTestPageModule)
   },
 ];
 

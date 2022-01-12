@@ -3,7 +3,7 @@
     <name>NFC IntelLogs</name>
     <description>NFC Testing App</description>
     <author email="info@iibtech.com" href="http://iibtech.com/">IIBTech</author>
-    <content original-src="index.html" src="http://192.168.10.19:8101" />
+    <content original-src="index.html" src="http://192.168.137.132:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -98,5 +98,5 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
-    <allow-navigation href="http://192.168.10.19:8101" sessionid="e6928211" />
+    <allow-navigation href="http://192.168.137.132:8100" sessionid="f18c19d1" />
 </widget>
