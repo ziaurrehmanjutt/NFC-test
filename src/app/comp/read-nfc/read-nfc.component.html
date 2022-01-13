@@ -1,0 +1,86 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Read NFC
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button  (click)="closeModel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="isReading">
+    <ion-item>
+      <ion-label>
+        Please Wait For Read NFC
+      </ion-label>
+    </ion-item>
+</ion-content>
+
+
+<ion-content *ngIf="!isReading">
+<ion-button (click)="isReading = true;" expand="block" fill="outline">Read Another</ion-button>
+
+<ion-card>
+  <ion-card-header color="primary" class="ion-text-center">
+    <ion-card-title>Tag Result</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+      <ion-list>
+        <ion-item *ngIf="cardType == 3">
+          <ion-label>
+            This Is Not related With IntelLogs
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="cardType == 2">
+          <ion-label>
+            Not Readable or Empty Tag
+          </ion-label>
+        </ion-item>
+
+        <ng-container *ngIf="cardType == 1">
+
+          <ion-item>
+            <ion-label>
+              Type
+            </ion-label>
+            <ion-badge *ngIf="cardDetails.cardType == '1'">For Asset</ion-badge>
+            <ion-badge *ngIf="cardDetails.cardType == '2'">For Employee</ion-badge>
+          </ion-item>
+
+          <ion-item>
+            <ion-label *ngIf="cardDetails.cardType == '1'">
+              Asset Name
+            </ion-label>
+            <ion-label *ngIf="cardDetails.cardType == '2'">
+              Employee Name
+            </ion-label>
+            <ion-badge>{{cardDetails.objectName}}</ion-badge>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>
+              NFC Status
+            </ion-label>
+           <ion-label>
+              <ion-badge color="success" *ngIf="cardDetails.isValid">Valid</ion-badge> 
+              <ion-badge color="danger" *ngIf="!cardDetails.isValid">Not Valid</ion-badge> 
+              <br>
+              <ion-badge color="success" *ngIf="cardDetails.isChanged">Not Changed/Original</ion-badge> 
+              <ion-badge color="danger" *ngIf="!cardDetails.isChanged">Altered/Not Original</ion-badge> 
+             
+           </ion-label>
+            
+          </ion-item>
+
+        </ng-container>
+
+      </ion-list>
+  </ion-card-content>
+</ion-card>
+</ion-content>
+
+

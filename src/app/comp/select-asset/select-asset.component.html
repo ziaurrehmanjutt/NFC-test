@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Asset Select
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button  (click)="closeModel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-radio-group [(ngModel)]="selectIndex" (ionChange)="chnageRadio()">
+    <ion-item *ngFor="let a of allEmp;let i=index">
+      <ion-label>{{a.asset_title}}</ion-label>
+      <ion-radio slot="end" [value]="i"></ion-radio>
+    </ion-item>
+  </ion-radio-group> 
+</ion-content>
+
+   

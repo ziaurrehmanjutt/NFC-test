@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
 })
 export class ConfigService {
 
-  public SERVER_API = ""
+  // public SERVER_API = "http://172.28.52.25/Intelogs/"
+    public SERVER_API = "https://deverp.intellogs.com/";
  
   constructor(
   ) { 

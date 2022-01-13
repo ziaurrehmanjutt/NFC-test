@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      NFC Operations
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button  (click)="closeModel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="makeReadonly">
+  <ion-item>
+    <ion-label>
+      <h2>San NFC to make it read Only</h2>
+      <p style="color: red;">Once Make readonly, Its Can't be undone And Tag can't be write Again</p>
+    </ion-label>
+  </ion-item>
+  <ion-item *ngIf="showError">
+    <ion-label>
+      <ion-badge color="danger">{{showError}}</ion-badge>
+    </ion-label>
+  </ion-item>
+</ion-content>
+
+<ion-content *ngIf="makeBlank">
+  <ion-item>
+    <ion-label>
+      <h2>San NFC to Clear its Data</h2>
+      <p style="color: red;">Once You clear Data on tag, Its Can't Recover, However you can Re-Write on it</p>
+    </ion-label>
+  </ion-item>
+  <ion-item *ngIf="showError">
+    <ion-label>
+      <ion-badge color="danger">{{showError}}</ion-badge>
+    </ion-label>
+  </ion-item>
+</ion-content>

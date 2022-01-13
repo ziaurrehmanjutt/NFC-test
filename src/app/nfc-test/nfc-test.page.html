@@ -4,27 +4,63 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="isLogin && isEnable">
 
   <ion-item>
-    <ion-button expand="block" size="large">
+    <ion-button [disabled]="!isEnable" (click)="readTags()" expand="block" fill="outline">
       Read Tags
     </ion-button>
     <ion-badge slot="end" color="none"><small>It will read From tags</small></ion-badge>
   </ion-item>
 
   <ion-item>
-    <ion-button (click)="writeTags()" expand="block" size="large">
+    <ion-button  [disabled]="!isEnable" (click)="writeTags()" expand="block" fill="outline">
       Write Tags
     </ion-button>
     <ion-badge slot="end" color="none"><small>It will Write On From tags</small></ion-badge>
   </ion-item>
 
+
+
   <ion-item>
-    <ion-button expand="block" size="large">
+    <ion-button [disabled]="!isEnable" (click)="makeReadonly(1)" expand="block" fill="outline">
+      Make Read Only
+    </ion-button>
+    <ion-badge slot="end" color="none"><small>It Will Make A Tag Readonly</small></ion-badge>
+  </ion-item>
+
+  <ion-item>
+    <ion-button (click)="makeReadonly(2)" [disabled]="!isEnable" expand="block" fill="outline">
+      Clear Tag
+    </ion-button>
+    <ion-badge slot="end" color="none"><small>It Will Clear Tag</small></ion-badge>
+  </ion-item>
+
+  <ion-item>
+    <ion-button (click)="shareMe()" [disabled]="!isEnable" expand="block" size="large">
       Share Me
     </ion-button>
     <ion-badge slot="end" color="none"><small>It Will Share Your Identity</small></ion-badge>
   </ion-item>
 
+</ion-content>
+
+<ion-content *ngIf="!isLogin">
+
+  <ion-item>
+    <ion-label>Please Wait For Login</ion-label>
+  </ion-item>
+</ion-content>
+
+<ion-content *ngIf="!isEnable">
+
+  <ion-content [fullscreen]="true">
+    <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+  <ion-item>
+    <ion-label>Your NFC Disabled or not Supported</ion-label>
+
+  </ion-item>
 </ion-content>

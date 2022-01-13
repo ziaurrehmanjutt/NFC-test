@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { MessageComponentModule } from '../message/message.module';
-import { NFC, Ndef } from '@awesome-cordova-plugins/nfc/ngx';
+
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import { NFC, Ndef } from '@awesome-cordova-plugins/nfc/ngx';
     MessageComponentModule,
     HomePageRoutingModule
   ],
-  providers: [NFC,Ndef],
+  // providers: [NFC,Ndef],
   declarations: [HomePage]
 })
 export class HomePageModule {}

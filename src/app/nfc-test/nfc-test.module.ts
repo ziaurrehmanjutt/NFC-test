@@ -8,11 +8,13 @@ import { NfcTestPageRoutingModule } from './nfc-test-routing.module';
 
 import { NfcTestPage } from './nfc-test.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    // NFC,
     NfcTestPageRoutingModule
   ],
   declarations: [NfcTestPage]

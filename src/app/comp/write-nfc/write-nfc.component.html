@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Write NFC
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button  (click)="closeModel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="step == 1">
+  <ion-item>
+    <ion-label>Waiting to Write...</ion-label>
+  </ion-item>
+
+  <ion-item *ngIf="showError">
+    <ion-label *ngIf="showError">
+      <ion-badge color="danger">{{showError}}</ion-badge>
+    </ion-label>
+  </ion-item>
+</ion-content>
+
+<ion-content *ngIf="step == 2">
+  <ion-item>
+    <ion-label>Please wait Upload On Server</ion-label>
+  </ion-item>
+</ion-content>
